@@ -1,0 +1,33 @@
+```elixir
+iex(1)> a = 2
+2
+iex(2)> [a,b,a] = [1,2,3]
+** (MatchError) no match of right hand side value: [1, 2, 3]
+
+iex(2)> [a,b,a] = [1,1,2]
+** (MatchError) no match of right hand side value: [1, 1, 2]
+
+iex(2)> a = 1
+1
+iex(3)> ^a = 2
+** (MatchError) no match of right hand side value: 2
+
+iex(3)> ^a = 1
+1
+iex(4)> ^a = 2 - a
+1
+```
+
+`a = 1`で再代入されてしまっているので、再代入されてないversion
+
+```elixir
+iex(1)> a = 2
+2
+iex(2)> ^a = 2
+2
+iex(3)> ^a = 1
+** (MatchError) no match of right hand side value: 1
+
+iex(3)> ^a = 2 - a
+** (MatchError) no match of right hand side value: 0
+```
