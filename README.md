@@ -2,6 +2,8 @@
 
 Reading workshop of "Programming Elixir" (Ohmsha, 2016).
 
+↓ 以下は mix でプロジェクトを生成した際に作られた文書です
+
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed
