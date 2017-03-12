@@ -1,0 +1,6 @@
+
+fizz_buzz = fn
+  ( 0, y, z ) -> "Fizz"
+  ( 0, 0, z ) -> "Buzz"
+  ( x, y, z ) -> z
+end

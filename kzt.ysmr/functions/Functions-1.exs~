@@ -1,0 +1,15 @@
+
+
+list_concat = fn ( [ x0, x1], [ y0, y1 ] ) -> [ x0, x1, y0, y1 ] end
+list_concat.( [ :a, :b ], [ :c, :d ] ) #=> [:a, :b, :c, :d]
+
+sum = fn ( x, y, z ) -> x + y + z end
+sum.( 1, 2, 3 ) #=> 6
+
+pair_tuple_to_list = fn { x, y } -> [ x, y ] end
+pair_tuple_to_list.( { 1234, 5678 } ) #=> [1234, 5678]
+
+
+
+
+

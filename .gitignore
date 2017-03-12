@@ -21,3 +21,6 @@ erl_crash.dump
 
 # IntelliJ IDEA
 /.idea
+
+# Emacs backup files
+*~
