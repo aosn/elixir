@@ -5,10 +5,10 @@
 # a, b, c -> c
 
 fizz_buzz = fn
-    0, 0, _a -> "FizzBuzz"
-    0, _a, _b -> "Fiz"
-    _a, 0 ,_b -> "Buzz"
-    _a, _b, c -> c
+    0, 0, _ -> "FizzBuzz"
+    0, _, _ -> "Fiz"
+    _, 0 ,_ -> "Buzz"
+    _, _, c -> c
 end
 
 IO.puts fizz_buzz.(0,0,10)
