@@ -5,4 +5,4 @@ fizzbuzz = fn
     _, _, i -> i
 end
 
-IO.Puts fizzbuzz.(0,2,15)
+IO.puts fizzbuzz.(0,1,13)
