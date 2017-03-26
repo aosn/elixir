@@ -1,6 +1,6 @@
-defmodule ElixirTest do
+defmodule AOSNTest do
   use ExUnit.Case
-  doctest Elixir
+  doctest AOSN
 
   test "the truth" do
     assert 1 + 1 == 2
