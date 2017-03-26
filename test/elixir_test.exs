@@ -1,4 +1,4 @@
-defmodule ElixirTest do
+defmodule AOSNTest do
   use ExUnit.Case
   doctest Elixir
 
