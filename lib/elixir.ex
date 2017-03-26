@@ -1,6 +1,6 @@
 defmodule AOSN do
   @moduledoc """
-  Documentation for Elixir.
+  Documentation for AOSN.
   """
 
   @doc """
@@ -8,7 +8,7 @@ defmodule AOSN do
 
   ## Examples
 
-      iex> Elixir.hello
+      iex> AOSN.hello
       :world
 
   """
