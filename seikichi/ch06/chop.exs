@@ -5,13 +5,12 @@ defmodule Chop do
   end
 
   def guess_helper(actual, guess, _) when actual === guess do
-    IO.puts guess
     [guess]
   end
-  def guess_helper(actual, guess, left..right) when actual < guess do
+  def guess_helper(actual, guess, left.._) when actual < guess do
     [guess] ++ guess_helper(actual, div(left + guess, 2), left..guess)
   end
-  def guess_helper(actual, guess, left..right) when actual > guess do
+  def guess_helper(actual, guess, _..right) when actual > guess do
     [guess] ++ guess_helper(actual, div(guess + right, 2), guess..right)
   end
 end
