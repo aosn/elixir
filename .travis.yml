@@ -1,5 +1,5 @@
 language: elixir
-git:
-  submodules: false
 notifications:
   email: false
+before_install:
+    git submodule update --init
