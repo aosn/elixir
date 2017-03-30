@@ -1,5 +1,7 @@
 # Elixir
 
+[![Build Status](https://travis-ci.org/aosn/elixir.svg?branch=master)](https://travis-ci.org/aosn/elixir)
+
 Reading workshop of "Programming Elixir" (Ohmsha, 2016).
 
 ↓ 以下は mix でプロジェクトを生成した際に作られた文書です
