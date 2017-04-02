@@ -1,7 +1,7 @@
 defmodule Chop do
   def guess(actual, range = l..h) do 
     g = div(l+h, 2)
-    IO.puts "Is it #{g}?"
+    IO.puts "Is it #{g}"
     p_guess(actual, g, range)
   end
   defp p_guess(actual,actual, _), do: IO.puts("#{actual}")
