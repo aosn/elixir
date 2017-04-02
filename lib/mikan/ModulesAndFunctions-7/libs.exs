@@ -11,7 +11,9 @@ IO.puts "4) get cwd"
 IO.puts System.cwd # "d:/Projects/git/aosn/elixir"
 
 IO.puts "5) convert JSON to elixir data structure"
-IO.puts "https://hex.pm/packages/json"
+# json_input = "{\"key\":\"this will be a value\"}"
+# {status, list} = JSON.decode(json_input)
+# list["key"]
 
 IO.puts "6) execute shell command"
 IO.inspect System.cmd "pwd", [] # {"D:\\Projects\\git\\aosn\\elixir\r\n", 0}

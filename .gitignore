@@ -24,3 +24,6 @@ erl_crash.dump
 
 # Emacs backup files
 *~
+
+# Lock
+mix.lock
