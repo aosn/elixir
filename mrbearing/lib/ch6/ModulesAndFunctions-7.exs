@@ -1,6 +1,6 @@
 ## 浮動点少数を2つの十進数からなる文字列に変換する
 
- :io.format(" this is  ~3.1f~n ", [5.768])
+ :io.format(" this is  ~4.2f~n ", [3.1415926535])
 
 # iex(5)> :io.format(" this is  ~3.1f~n ", [678785.768])
 #  this is  ***
