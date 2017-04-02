@@ -15,13 +15,13 @@ end
 # iex(1)> c "lib/ch6/ModulesAndFunctions-6.exs"
 # [Chop]
 # iex(2)> Chop.guess(273,1..1000)
-# Is it 500?
-# Is it 250?
-# Is it 375?
-# Is it 312?
-# Is it 281?
-# Is it 265?
-# Is it 273?
+# Is it 500
+# Is it 250
+# Is it 375
+# Is it 312
+# Is it 281
+# Is it 265
+# Is it 273
 # 273
 # :ok
 # iex(3)>
