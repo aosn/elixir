@@ -2,3 +2,6 @@
 	path = budougumi0617
 	url = https://github.com/budougumi0617/ElixirTraining.git
 
+[submodule "mikan"]
+	path = mikan
+	url = https://github.com/mikan/elixir-practice.git
