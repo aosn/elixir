@@ -1,10 +1,9 @@
 
 defmodule MyList do
-    def caesar( [], n ), do: []
-    def caesar( [ head | tail ], n ), do: [ helper( head, n ) | caesar( tail, n ) ]
+    def caesar( [], _ ), do: []
+    def caesar( [ x | xs ], y ), do: [ loop( x, y ) | caesar( xs, y ) ]
 
-    defp helper( x, n ) when 122 < x + n, do: 97
-    defp helper( x, n ), do: x + n
+    defp loop( x, y ), do: rem( ( ( x - 97 )  + y ), 26 ) + 97
 end
 
 IO.puts MyList.caesar( '', 0 )

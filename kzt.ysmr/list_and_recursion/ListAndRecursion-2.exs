@@ -1,12 +1,12 @@
 
 defmodule MyList do
-    def max( list ), do: reduce( list, 0, fn ( x, y ) -> _max( x, y ) end )
+    def max( xs ), do: reduce( xs, 0, fn ( x, y ) -> _max( x, y ) end )
 
-    def reduce( [], default, op ), do: default
-    def reduce( [ head | tail ], default, op ), do: op.( head, reduce( tail, default, op ) )
+    def reduce( [], x0, _ ), do: x0
+    def reduce( [ x | xs ], x0, f ), do: f.( x, reduce( xs, x0, f ) )
 
     defp _max( x, y ) when x < y, do: y
-    defp _max( x, y ), do: x
+    defp _max( x, _ ), do: x
 end
 
 IO.puts MyList.max( [] )
