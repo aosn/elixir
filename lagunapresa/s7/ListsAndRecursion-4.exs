@@ -1,7 +1,8 @@
 defmodule MyList do
   def span(from, to) when from > to, do: raise "Illigal Arguments: from > to"
-  def span(from, to) when from == to, do: [ from ]
-  def span(from, to), do: [ from | span(from + 1, to) ]
+  def span(from, to), do: _span([], from, to)
+  defp _span(acc, from, cur) when from == cur, do: [ from | acc ]
+  defp _span(acc, from, cur), do: _span([ cur | acc ], from, cur - 1)
 end
 
 # iex(1)> c "ListsAndRecursion-4.exs"
