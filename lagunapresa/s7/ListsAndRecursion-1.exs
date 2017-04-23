@@ -1,10 +1,8 @@
 defmodule MyList do
-  def sum([]), do: 0
-  def sum([h | tail]), do: h + sum(tail)
+  def mapsum([], _), do: 0
+  def mapsum([h | tail], f), do: f.(h) + mapsum(tail, f)
 end
 
-# iex(1)> c "ListsAndRecursion-0.exs"
-# [MyList]
-# iex(2)> MyList.sum([1,2,3,4])
-# 10
+# iex(2)> MyList.mapsum([1,2,3,4], fn n -> n * n end)
+# 30
 # iex(3)>
