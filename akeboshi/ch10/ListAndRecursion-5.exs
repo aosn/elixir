@@ -10,9 +10,9 @@ defmodule MyEnum do
 
   def all2?([], _), do: false
   def all2?(list, func), do: all2?(list, func, true)
-  defp all2?([head|list], func, condition) when condition, do: all2?(list, func, func.(head))
+  defp all2?([head|list], func, true), do: all2?(list, func, func.(head))
   defp all2?(_, _, condition), do: condition
-  # defp all2?([], _, condition) when condition, do: true
+  # defp all2?([], _, true), do: true
   # defp all2?(_, _, _), do: false
 
   def filter([], _), do: []
