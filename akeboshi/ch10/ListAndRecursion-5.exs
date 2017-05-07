@@ -38,10 +38,10 @@ defmodule MyEnum do
   end
 
   def take_tail(list, 0), do: list
-  def take_tail([head | tail], count), do: take_tail(tail, count-1)
+  def take_tail([_ | tail], count), do: take_tail(tail, count-1)
 
-  def take(list, 0), do: []
-  def take([head|tail], count), do: [head | take(tail, count-1)]
+  def take(_, 0), do: []
+  def take([head | tail], count), do: [head | take(tail, count-1)]
 end
 
 list = Enum.to_list 1..5
