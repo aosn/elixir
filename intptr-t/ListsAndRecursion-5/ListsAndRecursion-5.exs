@@ -47,13 +47,13 @@ defmodule MyEnum do
   end
   # 左から指定個数の要素を追加してく
   defp _split_l([], _index, _count, acc_l, acc_r) do
-    {acc_l, acc_r}
+    {reverse(acc_l), reverse(acc_r)}
   end
   defp _split_l([head | tail], index, count, acc_l, acc_r) when index < count do
-    _split_l(tail, index + 1, count, acc_l ++ [head], acc_r)
+    _split_l(tail, index + 1, count, [head | acc_l], acc_r)
   end
   defp _split_l([head | tail], index, count, acc_l, acc_r) when index >= count do
-    _split_l(tail, index + 1, count, acc_l, acc_r ++ [head])
+    _split_l(tail, index + 1, count, acc_l, [head | acc_r])
   end 
   # 右側から指定個数の要素を追加してく
   defp _split_r([], _index, _count, acc_l, acc_r) do
@@ -77,12 +77,12 @@ defmodule MyEnum do
     end
   end
   # 左側から指定個数の要素を取り出す
-  defp _take_l([], _index, _count, acc),         do: acc
+  defp _take_l([], _index, _count, acc),         do: reverse(acc)
   defp _take_l([head | tail], index, count, acc) do
     if index < count do
-      _take_l(tail, index + 1, count, acc ++ [head])
+      _take_l(tail, index + 1, count, [head | acc])
     else
-      acc
+      reverse(acc)
     end
   end 
   # 右側から指定個数の要素を取り出す
