@@ -14,8 +14,8 @@ defmodule Eratosthenes do
   defp filtering( i, j, acc ) when rem( j, i ) != 0, do: [ j | acc ]
   defp filtering( _, _, acc ), do: acc
 
-  defp _eratosthenes( i, acc, n ) when i > n, do: acc
-  defp _eratosthenes( i, acc, n ), do: _eratosthenes( i + 1, foldr( fn ( j, acc0 ) -> filtering( i, j, acc0 ) end, acc, [] ), n )
+  defp _eratosthenes( i, n, acc ) when i > n, do: acc
+  defp _eratosthenes( i, n, acc ), do: _eratosthenes( i + 1, n, foldr( fn ( j, acc0 ) -> filtering( i, j, acc0 ) end, acc, [] ) )
   
-  def eratosthenes( n ), do: _eratosthenes( 2, span( 2, n ), n / 2 )
+  def eratosthenes( n ), do: _eratosthenes( 2, n / 2, span( 2, n ) )
 end 
