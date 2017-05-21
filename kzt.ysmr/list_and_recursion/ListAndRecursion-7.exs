@@ -3,6 +3,9 @@ defmodule MyList do
   def span( x, y ) when x == y , do: [ x ]
   def span( x, y ), do: [ x | span( x + 1, y ) ]
 
+  def foldl( _, y, [] ), do: y
+  def foldl( f, y, [ x | xs ] ), do: foldl( f, f.( y, x ), xs )
+  
   def foldr( _, [], y ), do: y
   def foldr( f, [ x | xs ], y ), do: f.( x, foldr( f, xs, y ) )
 end  
@@ -14,8 +17,8 @@ defmodule Eratosthenes do
   defp filtering( i, j, acc ) when rem( j, i ) != 0, do: [ j | acc ]
   defp filtering( _, _, acc ), do: acc
 
-  defp _eratosthenes( i, n, acc ) when i > n, do: acc
-  defp _eratosthenes( i, n, acc ), do: _eratosthenes( i + 1, n, foldr( fn ( j, acc0 ) -> filtering( i, j, acc0 ) end, acc, [] ) )
+  defp __eratosthenes( i ), do: fn ( j, acc0 ) -> filtering( i, j, acc0 ) end
+  defp _eratosthenes, do: fn ( acc, i ) -> foldr( __eratosthenes( i ), acc, [] ) end
   
-  def eratosthenes( n ), do: _eratosthenes( 2, n / 2, span( 2, n ) )
-end 
+  def eratosthenes( n ), do: foldl( _eratosthenes, span( 2, n ), span( 2, div( n, 2 ) ) )
+end
