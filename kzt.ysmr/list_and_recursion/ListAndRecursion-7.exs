@@ -3,11 +3,6 @@ defmodule MyList do
   def span( x, y ) when x == y , do: [ x ]
   def span( x, y ), do: [ x | span( x + 1, y ) ]
 
-  def foldl( _, y, [] ), do:  y
-  def foldl( f, y, [ x | xs ] ), do: foldl( f, f.( y, x ), xs )
-  
-  def reverse( xs ), do: foldl( fn ( acc, x ) -> [ x | acc ] end, [], xs )
-
   def foldr( _, [], y ), do: y
   def foldr( f, [ x | xs ], y ), do: f.( x, foldr( f, xs, y ) )
 end  
