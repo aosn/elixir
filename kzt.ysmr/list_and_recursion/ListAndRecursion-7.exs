@@ -19,6 +19,6 @@ defmodule Eratosthenes do
   defp _eratosthenes( i, acc, n ) when i > n, do: acc
   defp _eratosthenes( i, acc, n ), do: _eratosthenes( i + 1, foldl( fn ( acc0, j ) -> filtering( i, acc0, j ) end, [], acc ), n )
   
-  def eratosthenes( n ) when rem( div( n, 2 ), 2 ) == 0, do: reverse( _eratosthenes( 2, span( 3, n ), n / 2 ) )
-  def eratosthenes( n ), do: _eratosthenes( 2, span( 3, n ), n / 2 )
+  def eratosthenes( n ) when rem( div( n, 2 ), 2 ) == 0, do: reverse( _eratosthenes( 2, span( 2, n ), n / 2 ) )
+  def eratosthenes( n ), do: _eratosthenes( 2, span( 2, n ), n / 2 )
 end 
