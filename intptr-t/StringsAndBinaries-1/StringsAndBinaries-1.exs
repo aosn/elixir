@@ -3,7 +3,7 @@ defmodule Chars do
     def is_printable_ascii?([]), do: true
     def is_printable_ascii?([head|tail])
         when (@white_space  <= head) and (head <= ?~) do
-            is_printable_ascii(tail)
+            is_printable_ascii?(tail)
     end
     def is_printable_ascii?(_), do: false
 end
