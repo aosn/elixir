@@ -7,4 +7,4 @@
 	url = https://github.com/mikan/elixir-practice.git
 [submodule "mrbearing"]
 	path = mrbearing
-	url = git@github.com:MrBearing/elixir_prac.git
+	url = https://github.com/MrBearing/elixir_prac.git
