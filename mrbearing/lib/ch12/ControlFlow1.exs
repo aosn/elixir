@@ -10,13 +10,10 @@ defmodule FizzBuzz do
             {true,true} -> "FizzBuzz"  
             {true,false} -> "Fizz"  
             {false, true} -> "Buzz"
-            _ -> n
+            _ ->  n
         end  
     end
-
-    
 end
 
 
-
-IO.puts FizzBuzz.upto(100)
+IO.inspect FizzBuzz.upto(100)
