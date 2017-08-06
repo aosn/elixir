@@ -15,7 +15,7 @@ defmodule Issues.Mixfile do
   # Type "mix help compile.app" for more information
   def application do
     # Specify extra applications you'll use from Erlang/Elixir
-    [extra_applications: [:logger, :httpoison]]
+    [extra_applications: [:logger]]
   end
 
   # Dependencies can be Hex packages:
@@ -29,8 +29,7 @@ defmodule Issues.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
-      httpoison: "~> 0.8",
-      poison: "~> 1.5"
+      { :httpoison, "~> 0.8" }
     ]
   end
 end
