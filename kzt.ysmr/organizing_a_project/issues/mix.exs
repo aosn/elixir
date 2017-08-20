@@ -15,7 +15,9 @@ defmodule Issues.Mixfile do
   # Type "mix help compile.app" for more information
   def application do
     # Specify extra applications you'll use from Erlang/Elixir
-    [extra_applications: [:logger]]
+    [
+      applications: [ :logger ]
+    ]
   end
 
   # Dependencies can be Hex packages:
@@ -28,6 +30,10 @@ defmodule Issues.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    []
+    [
+      { :credo, "~> 0.8", only: [:dev, :test], runtime: false },
+      { :tesla, "~> 0.7.1" },
+      { :poison, ">= 1.0.0" }
+    ]
   end
 end
