@@ -7,8 +7,8 @@ defmodule WorkingWithMultipleProcesses2 do
   end
 
   def run do
-    pid1 = spawn(WorkingWithMultipleProcesses2, :echo, [])
-    pid2 = spawn(WorkingWithMultipleProcesses2, :echo, [])
+    pid1 = spawn(__MODULE__, :echo, [])
+    pid2 = spawn(__MODULE__, :echo, [])
 
     send pid1, {self(), "fred"}
     send pid2, {self(), "betty"}
