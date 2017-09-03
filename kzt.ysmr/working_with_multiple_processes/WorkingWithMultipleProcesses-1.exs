@@ -2,21 +2,25 @@
 defmodule WorkingWithMultipleProcesses1 do
   import :timer, only: [ sleep: 1 ]
 
-  def sad_function do
+  def sad_function( parent ) do
+    send parent, "I am going to die..."
     exit( :boom )
   end
 
-  def run do
-    Process.flag( :trap_exit, true )
-    res = spawn_monitor( WorkingWithMultipleProcesses1, :sad_function, [] )
-    sleep 500
-    IO.puts inspect res
-
+  def receiver do
     receive do
       msg ->
 	IO.puts "MESSAGE RECEIVED: #{inspect msg}"
+	receiver()
     after 1000 ->
 	IO.puts "Nothing happened as far as I am concerned"
     end
+  end
+  
+  def run do
+    Process.flag( :trap_exit, true )
+    res = spawn_link( WorkingWithMultipleProcesses1, :sad_function, [self()] )
+    sleep 500
+    receiver()
   end
 end
