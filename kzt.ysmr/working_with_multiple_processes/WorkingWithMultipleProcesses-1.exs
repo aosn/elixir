@@ -7,6 +7,7 @@ defmodule WorkingWithMultipleProcesses1 do
   end
 
   def run do
+    Process.flag( :trap_exit, true )
     res = spawn_monitor( WorkingWithMultipleProcesses1, :sad_function, [] )
     sleep 500
     IO.puts inspect res
@@ -19,6 +20,3 @@ defmodule WorkingWithMultipleProcesses1 do
     end
   end
 end
-
-
-
