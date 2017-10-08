@@ -20,10 +20,13 @@ defmodule Ticker do
     after
       @interval ->
         IO.puts "tick"
-        Enum.each clients, fn client ->
-          send client, { :tick }
+        case clients do
+          [client|rest] ->
+            send client, { :tick }
+            generator(rest ++ [client])
+          _ ->
+            generator(clients)
         end
-        generator(clients)
     end
   end
 end
