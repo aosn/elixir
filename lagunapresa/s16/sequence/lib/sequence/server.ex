@@ -1,4 +1,5 @@
 # OPT-Servers-1 implemented
+# OPT-Servers-2 implemented
 
 defmodule Sequence.Server do
   use GenServer
