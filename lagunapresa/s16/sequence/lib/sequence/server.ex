@@ -29,3 +29,11 @@ end
 # 1
 # iex(8)> GenServer.call(pid, :pop)
 # ** (EXIT from #PID<0.121.0>) evaluator process exited with reason: an exception was raised:
+
+
+# OPT-Servers-3 tried
+
+# iex(1)> GenServer.start_link(Sequence.Server, [1,2,3], name: :seq)
+# {:ok, #PID<0.157.0>}
+# iex(1)> GenServer.cast(:seq, {:push, 1})
+# :ok
