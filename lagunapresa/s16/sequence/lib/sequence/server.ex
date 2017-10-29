@@ -4,8 +4,8 @@
 defmodule Sequence.Server do
   use GenServer
 
-  def handle_call({:push, value}, _from, current_stack) do
-    { :reply, current_stack, [value|current_stack] }
+  def handle_call({:push, value}, current_stack) do
+    { :noreply, [value|current_stack] }
   end
 
   def handle_call(:pop, _from, [head|rest]) do
