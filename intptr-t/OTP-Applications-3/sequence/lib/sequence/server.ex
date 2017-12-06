@@ -2,7 +2,7 @@ defmodule Sequence.Server do
   use GenServer
   require Logger
 
-  @vsn "2"
+  @vsn "1"
   defmodule State do
     defstruct current_number: 0, stash_pid: nil, delta: 1
   end
@@ -37,8 +37,8 @@ defmodule Sequence.Server do
   def init(stash_pid) do
     current_values = Sequence.Stash.get_value stash_pid
     # エラーチェックを含めた、値取り出し
-    [initial_number: current_number,
-     initial_delta:  delta
+    [current_number: current_number,
+     current_delta:  delta
     ] = current_values
     {:ok,
      %State{current_number: current_number, stash_pid: stash_pid, delta: delta}}
@@ -62,8 +62,8 @@ defmodule Sequence.Server do
 
   def terminate(_reason, state) do
     Sequence.Stash.save_value state.stash_pid, [
-      initial_number: state.current_number,
-      initial_delta:  state.delta
+      current_number: state.current_number,
+      current_delta:  state.delta
     ]
   end
 
