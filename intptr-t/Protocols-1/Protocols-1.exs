@@ -59,3 +59,10 @@ IO.inspect CaesarEncrypt.rot13("ryvkve")
 
 IO.inspect CaesarEncrypt.encrypt('z', 1)
 IO.inspect CaesarEncrypt.encrypt("z", 1)
+
+# 'elixir'
+# 'elixir'
+# "elixir"
+# "elixir"
+# 'a'
+# "a"
