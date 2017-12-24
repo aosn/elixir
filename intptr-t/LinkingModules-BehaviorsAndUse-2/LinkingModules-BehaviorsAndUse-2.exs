@@ -16,7 +16,8 @@ defmodule Tracer do
         call_text = "#{Tracer.dump_defn(unquote(name), unquote(args))}"
         IO.puts IO.ANSI.format([:inverse, "==>call:    #{call_text}"])
         result = unquote(content)
-        IO.puts IO.ANSI.format([:bright, "<== result: #{result}"])
+        IO.ANSI.green_background()
+        IO.puts IO.ANSI.format([:red, :green_background, "<== result: #{result}"])
         result
       end
     end
